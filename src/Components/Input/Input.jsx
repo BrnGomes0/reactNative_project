@@ -28,7 +28,7 @@ export default function Input (props) {
                     color='white'
                     style={styles.iconSecret}
                 />
-            </TouchableOpacity>
+                </TouchableOpacity>
             )}
             
         </View>

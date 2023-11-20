@@ -1,24 +1,29 @@
 import react from "react";
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image} from 'react-native';
 import Button from "../../Components/Button/Button";
 import Input from "../../Components/Input/Input";
-import { useState } from "react";
-import { Linking } from "react-native";
 
 function HomeScreen () {
-    const [selected, setSelected] = useState(false)
+    const btnPressed = () => {
+        console.log('BUTTON PRESSED')
+    }
     return(
         <View style={styles.container}>
-            <Image
+            {/* <Image
                 source={require('../../../assets/imgs/logo.png')}
+            /> */}
+            <img
+                src={require('../../../assets/imgs/logo.png')}
+                alt='Logo'
+                style={styles.logo} 
             />
             <Text style={styles.title}>Hello!</Text>
             <Text style={styles.text}>Welcome to BuBo bank. Log in to access your account and analyze your investments</Text>
             <Button
-                title={'SignIn'}
+                title='SignIn'
+                onPress={btnPressed}
             />
-            <Text>New Here?<Linking></Linking></Text>
+            <Text style={styles.text}>New Here?<a href="/" style={styles.a}> Create Account</a></Text>
         </View>
     );
 }
@@ -35,13 +40,22 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 60,
-        color: 'white',
-        fontWeight: 'bold'
+        color: '#E4EE00',
+        fontWeight: 'bold',
     },
     text: {
         color: 'white',
         textAlign: 'center',
         fontSize: 14,
         width: 280,
+    }, 
+    logo: {
+        padding: 210,
+        width: 150, 
+        height: 150, 
+    },
+    a : {
+        color: '#E4EE00',
+        textDecorationLine: 'none',
     }
 });
