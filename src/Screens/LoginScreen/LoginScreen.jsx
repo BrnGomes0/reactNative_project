@@ -1,36 +1,43 @@
-import { StyleSheet } from "react-native";
-import { View } from "react-native";
-import Input from "../../Components/Input/Input";
-import Button from "../../Components/Button/Button";
+import react from "react";
+import { View, StyleSheet, Text } from "react-native";
+import Input from "../../Components/Input/Input.jsx";
+import Button from "../../Components/Button/Button.jsx";
+import SocialButton from '../../Components/SocialButton/SocialButton.jsx'
 
 function LoginScreen () {
     return(
-        <View>
-        <Text>Create an account</Text>
-        <Text>Create your account here. Look the your email after create account for to check code</Text>
-
-        <Input
-            placeholder='Email'
-            icon='account'
-        />
-        <Input
-            placeholder='Password'
-            icon='lock-outline'
-            secureTextEntry
-        />
-        <Button
-            title='Create an Account'
-        />
-        <Text>Already have an account?<a href="/"> Login</a></Text>
-
-
-    </View>
+        <View style={styles.container}>
+            <Text style={styles.tittle}>Welcome Back</Text>
+            <Text style={styles.text}>Welcome back to the best investment bank ever created on earth</Text>
+            <Input
+                placeholder='Email'
+                icon='email'
+            />
+            <Input
+                placeholder='Password'
+                icon='lock-outline'
+                secureTextEntry
+            />
+            <SocialButton
+                text='Login Apple'
+                name='apple'
+            />
+            <SocialButton
+                text='Login Google'
+                name='google'
+            />
+            <SocialButton
+                text='Login Facebook'
+                name='facebook'
+            />
+            <Button
+                title='LogIn'
+            />
+        </View>
     );
 }
 
 export default LoginScreen;
-
-
 
 const styles = StyleSheet.create({
     container: {
@@ -38,6 +45,13 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        flexDirection: 'col'
+        flexDirection: 'col',
+    },
+    tittle: {
+        color: 'white',
+        fontSize: 20,
+        fontWeight: 'bold',    },
+    text: {
+        color: 'white',
     }
-})
+});

@@ -1,7 +1,6 @@
 import react from "react";
 import { StyleSheet, Text, View, Image} from 'react-native';
 import Button from "../../Components/Button/Button";
-import Input from "../../Components/Input/Input";
 
 function HomeScreen () {
     const btnPressed = () => {
@@ -9,13 +8,9 @@ function HomeScreen () {
     }
     return(
         <View style={styles.container}>
-            {/* <Image
+            <Image
                 source={require('../../../assets/imgs/logo.png')}
-            /> */}
-            <img
-                src={require('../../../assets/imgs/logo.png')}
-                alt='Logo'
-                style={styles.logo} 
+                
             />
             <Text style={styles.title}>Hello!</Text>
             <Text style={styles.text}>Welcome to BuBo bank. Log in to access your account and analyze your investments</Text>
@@ -23,7 +18,7 @@ function HomeScreen () {
                 title='SignIn'
                 onPress={btnPressed}
             />
-            <Text style={styles.text}>New Here?<a href="/" style={styles.a}> Create Account</a></Text>
+            <Text style={styles.text}>New Here?</Text>
         </View>
     );
 }
@@ -40,7 +35,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 60,
-        color: '#E4EE00',
+        color: 'white',
         fontWeight: 'bold',
     },
     text: {
@@ -48,14 +43,5 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 14,
         width: 280,
-    }, 
-    logo: {
-        padding: 210,
-        width: 150, 
-        height: 150, 
     },
-    a : {
-        color: '#E4EE00',
-        textDecorationLine: 'none',
-    }
 });

@@ -1,8 +1,12 @@
-import HomeScreen from './src/Screens/HomeScreen/HomeScreen';
-import LoginScreen from './src/Screens/LoginScreen/LoginScreen';
+import {NavigationContainer} from '@react-navigation/native'
+import Tabs from './src/Navigation/Tabs.jsx'
 
-export default function App() {
-  return (
-    <LoginScreen/>
+const App = () => {
+  return(
+    <NavigationContainer>
+      <Tabs/>
+    </NavigationContainer>
   );
 }
+
+export default App;
