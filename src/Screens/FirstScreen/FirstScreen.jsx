@@ -1,7 +1,8 @@
-import react from "react";
-import { View, StyleSheet, Image, Text, FlatList } from "react-native";
+import react, { useState } from "react";
+import { View, StyleSheet, Image, Text, FlatList, TouchableOpacity } from "react-native";
 import { Ionicons } from "react-native-vector-icons";
 import Movimentation from "../../Components/Movimentation/Movimentation";
+import Action from "../../Components/ButtonsAction/Action";
 
 const list = [
   {
@@ -24,10 +25,22 @@ const list = [
     value: '3.211,20',
     date: '17/02/2002',
     type: 1 // Entrada
-  }
+  },
+  {
+    id:4,
+    label: 'Pix Client',
+    value: '530,20',
+    date: '17/02/2002',
+    type: 0 // Entrada
+  },
+  
 ]
 
 function FirstScreen () {
+  const [showValue, setShowValue] = useState(false)
+  const pressed = () => {
+    setShowValue(!showValue);
+  }
   return(
     <View style={styles.container}>
       <View style={styles.header}>
@@ -45,8 +58,9 @@ function FirstScreen () {
           size={26}
         />
       </View>
-      <Text style={styles.valueAccount}>R$ 9.148,00</Text>
+        <Text style={styles.valueAccount}>R$ 9.213,21</Text>
       <Text style={styles.textBalance}>Current Balance</Text>
+      <Action/>
       <Text style={styles.title}>Last Movimentation</Text>
       <FlatList
         style={styles.list}
@@ -93,7 +107,7 @@ const styles = StyleSheet.create({
   },
   valueAccount: {
     textAlign: 'center',
-    color: 'white',
+    color: '#E4EE00',
     fontSize: 36, 
     fontWeight: 'bold'
   },
@@ -109,7 +123,4 @@ const styles = StyleSheet.create({
     marginRight: 14,
     color: 'gray'
   },
-  list: {
-    
-  }
 });
