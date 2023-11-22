@@ -5,7 +5,6 @@ import HomeScreen from '../Screens/HomeScreen/HomeScreen.jsx'
 import LoginScreen from "../Screens/LoginScreen/LoginScreen.jsx";
 import RegisterScreen from '../Screens/RegisterScreen/RegisterScreen.jsx'
 import FirstScreen from '../Screens/FirstScreen/FirstScreen.jsx'
-import { shouldUseActivityState } from "react-native-screens";
 import { MaterialCommunityIcons } from "react-native-vector-icons";
 
 const Tab = createBottomTabNavigator();
@@ -25,12 +24,12 @@ const screenOptions = {
         elevation: 1,
         height: 70,
         borderRadius: 20,
-        backgroundColor: "#000",
+        backgroundColor: "gray",
         borderWidth: 1,
         borderColor: "#000",
         paddingLeft: 25,
         justifyContent: 'center',
-        zIndex: 3
+        zIndex: 3,
     }
 }
 
