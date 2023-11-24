@@ -4,9 +4,13 @@ import {
     Text,
     StyleSheet,
     TouchableOpacity,
-    ScrollView
+    ScrollView,
+    Image,
  } from 'react-native'
  import { MaterialIcons } from "react-native-vector-icons";
+ import { Ionicons } from "react-native-vector-icons";
+ import { Fontisto } from "react-native-vector-icons"
+
 
 
 export default function Action() {
@@ -15,13 +19,44 @@ export default function Action() {
         <TouchableOpacity style={styles.actionButton}>
             <View style={styles.areaButton}>
                 <MaterialIcons
-                    name='lock'
+                        name='pix'
+                        color='white'
+                        size={26}
+                />
+            </View>
+            <Text style={styles.labelButton}>Pix</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.actionButton}>
+            <View style={styles.areaButton}>
+                <Fontisto
+                    name='arrow-swap'
+                    color='white'
+                    size={26}
+                />
+            </View>
+            <Text style={styles.labelButton}>Transfer</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.actionButton}>
+            <View style={styles.areaButton}>
+                <MaterialIcons
+                    name='attach-money'
                     color='white'
                     size={26}
 
                 />
             </View>
-            <Text style={styles.labelButton}>Entradas</Text>
+            <Text style={styles.labelButton}>Money</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.actionButton}>
+            <View style={styles.areaButton}>
+                <Ionicons
+                    name='card-outline'
+                    color='white'
+                    size={26}
+
+                />
+            </View>
+            <Text style={styles.labelButton}>Cards</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.actionButton}>
             <View style={styles.areaButton}>
@@ -29,29 +64,6 @@ export default function Action() {
                     name='lock'
                     color='white'
                     size={26}
-
-                />
-            </View>
-            <Text style={styles.labelButton}>Entradas</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.actionButton}>
-            <View style={styles.areaButton}>
-                <MaterialIcons
-                    name='lock'
-                    color='white'
-                    size={26}
-
-                />
-            </View>
-            <Text style={styles.labelButton}>Entradas</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.actionButton}>
-            <View style={styles.areaButton}>
-                <MaterialIcons
-                    name='lock'
-                    color='white'
-                    size={26}
-
                 />
             </View>
             <Text style={styles.labelButton}>Entradas</Text>
@@ -93,6 +105,7 @@ const styles = StyleSheet.create({
     labelButton: {
         marginTop: 4,
         textAlign: 'center',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        color: 'gray',
     }
 });

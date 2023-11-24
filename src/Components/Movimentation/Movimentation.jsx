@@ -1,8 +1,11 @@
 import react, { useState } from "react";
+
 import {
      View,
      Text,
-     StyleSheet, TouchableOpacity
+     StyleSheet, 
+     TouchableOpacity,
+     ScrollView,
  } from "react-native";
 
 export default function Movimentation ({data}) {
@@ -11,7 +14,7 @@ export default function Movimentation ({data}) {
         setShowValue(!showValue);
     }
     return(
-        <TouchableOpacity style={styles.container} onPress={pressed}>
+         <TouchableOpacity style={styles.container} onPress={pressed}>
             <Text style={styles.data}>{data.date}</Text>
             <View style={styles.content}>
                 <Text style={styles.label}>{data.label}</Text>
@@ -30,7 +33,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         marginBottom: 24,
-        backgroundColor: 'white'
+        backgroundColor: '#d9d9d94d',
+        borderRadius:10,
     },
     content: {
         flexDirection: 'row',

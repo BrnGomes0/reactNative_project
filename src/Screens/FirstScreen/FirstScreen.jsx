@@ -3,6 +3,7 @@ import { View, StyleSheet, Image, Text, FlatList, TouchableOpacity } from "react
 import { Ionicons } from "react-native-vector-icons";
 import Movimentation from "../../Components/Movimentation/Movimentation";
 import Action from "../../Components/ButtonsAction/Action";
+import { ScrollView } from "react-native";
 
 const list = [
   {
@@ -13,7 +14,7 @@ const list = [
     type: 0 // Despesas
   },
   {
-    id:1,
+    id:2,
     label: 'Pix Client',
     value: '530,20',
     date: '17/02/2002',
@@ -52,23 +53,29 @@ function FirstScreen () {
           <Text style={styles.name}>Welcome, </Text>
           <Text style={styles.text}>Bruno Bosch</Text>
         </View>
+        <TouchableOpacity>
         <Ionicons
           name='settings'
           color='gray'
           size={26}
         />
+        </TouchableOpacity>
       </View>
-        <Text style={styles.valueAccount}>R$ 9.213,21</Text>
-      <Text style={styles.textBalance}>Current Balance</Text>
+        <View style={styles.balance}>
+          <Text style={styles.valueAccount}>R$ 9.213,21</Text>
+          <Text style={styles.textBalance}>Current Balance</Text>
+        </View>
       <Action/>
       <Text style={styles.title}>Last Movimentation</Text>
-      <FlatList
-        style={styles.list}
-        data={list}
-        keyExtractor={ (item) => String(item.id)}
-        showsVerticalScrollIndicator={false}
-        renderItem={({item}) => <Movimentation data={item}/>}
-      />
+      <View style={styles.containerList}>
+          <FlatList
+            style={styles.list}
+            data={list}
+            keyExtractor={ (item) => String(item.id)}
+            showsVerticalScrollIndicator={false}
+            renderItem={({item}) => <Movimentation data={item}/>}
+          />
+      </View>
     </View>
   );
 }
@@ -94,7 +101,8 @@ const styles = StyleSheet.create({
     borderRadius: 30
   },
   name: {
-    color: 'white'
+    color: 'gray',
+    
   },
   text: {
     color: '#E4EE00',
@@ -109,7 +117,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#E4EE00',
     fontSize: 36, 
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   textBalance: {
     textAlign: 'center',
@@ -121,6 +129,17 @@ const styles = StyleSheet.create({
     marginLeft: 14,
     marginTop: 14,
     marginRight: 14,
-    color: 'gray'
+    color: '#E4EE00',
+    textAlign: 'center',
+    paddingTop: 4,
+    paddingBottom: 10,
   },
+  containerList: {
+    padding: 12,
+    borderRadius: 20,
+  },
+  balance: {
+    paddingTop: 10, 
+    paddingBottom: 20,
+  }
 });
