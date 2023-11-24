@@ -19,8 +19,8 @@ const screenOptions = {
     tabBarStyle: {
         position: "absolute",
         bottom: 20,
-        width: '100%',
-        // left: 20,
+        width: '90%',
+        left: 20,
         right: 0,
         elevation: 1,
         height: 70,
@@ -31,6 +31,8 @@ const screenOptions = {
         paddingLeft: 25,
         justifyContent: 'center',
         zIndex: 3,
+        paddingLeft: -1
+
     }
 }
 

@@ -27,13 +27,6 @@ const list = [
     date: '17/02/2002',
     type: 1 // Entrada
   },
-  {
-    id:4,
-    label: 'Pix Client',
-    value: '530,20',
-    date: '17/02/2002',
-    type: 0 // Entrada
-  },
   
 ]
 

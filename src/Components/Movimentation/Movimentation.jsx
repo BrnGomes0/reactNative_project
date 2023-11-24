@@ -3,9 +3,8 @@ import react, { useState } from "react";
 import {
      View,
      Text,
-     StyleSheet, 
+     StyleSheet,
      TouchableOpacity,
-     ScrollView,
  } from "react-native";
 
 export default function Movimentation ({data}) {
@@ -33,8 +32,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         marginBottom: 24,
-        backgroundColor: '#d9d9d94d',
+        backgroundColor: '#8B8B8C',
         borderRadius:10,
+        padding: 4,
     },
     content: {
         flexDirection: 'row',
@@ -44,21 +44,23 @@ const styles = StyleSheet.create({
         padding: 4,
     },
     data: {
-        color: 'gray',
+        color: '#4A4F59 ',
         fontWeight: 'bold',
+        padding: 2,
     },
     label: {
         fontWeight: 'bold',
         fontSize: 16,
+        color: '#E8E6ED'
     },
     value: {
         fontSize: 16,
-        color: '#E4EE00',
+        color: '#52FF78',
         fontWeight: 'bold',
     },
     expenses: {
         fontSize: 16,
-        color: 'red',
+        color: '#8C031C',
         fontWeight: 'bold',
     },
     skeleton: {
@@ -67,5 +69,5 @@ const styles = StyleSheet.create({
         height: 10,
         backgroundColor: 'gray',
         borderRadius: 10,
-    }
+    },
 });

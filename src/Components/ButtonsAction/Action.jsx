@@ -7,10 +7,10 @@ import {
     ScrollView,
     Image,
  } from 'react-native'
+ import { MaterialCommunityIcons } from "react-native-vector-icons";
  import { MaterialIcons } from "react-native-vector-icons";
  import { Ionicons } from "react-native-vector-icons";
  import { Fontisto } from "react-native-vector-icons"
-
 
 
 export default function Action() {
@@ -18,11 +18,10 @@ export default function Action() {
     <ScrollView style={styles.container} horizontal={true} showsHorizontalScrollIndicator={false}>
         <TouchableOpacity style={styles.actionButton}>
             <View style={styles.areaButton}>
-                <MaterialIcons
-                        name='pix'
-                        color='white'
-                        size={26}
-                />
+               <Image
+                source={require('../../../assets/imgs/pix32.png')}
+                style={styles.icone}
+               />
             </View>
             <Text style={styles.labelButton}>Pix</Text>
         </TouchableOpacity>
@@ -60,8 +59,8 @@ export default function Action() {
         </TouchableOpacity>
         <TouchableOpacity style={styles.actionButton}>
             <View style={styles.areaButton}>
-                <MaterialIcons
-                    name='lock'
+                <MaterialCommunityIcons
+                    name='piggy-bank-outline'
                     color='white'
                     size={26}
                 />
@@ -70,8 +69,8 @@ export default function Action() {
         </TouchableOpacity>
         <TouchableOpacity style={styles.actionButton}>
             <View style={styles.areaButton}>
-                <MaterialIcons
-                    name='lock'
+                <MaterialCommunityIcons
+                    name='bitcoin'
                     color='white'
                     size={26}
                 />
@@ -107,5 +106,10 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontWeight: 'bold',
         color: 'gray',
-    }
+    },
+    icone :{
+        width: 20, 
+        height: 20,
+        justifyContent: 'space-evenly'
+    },
 });
