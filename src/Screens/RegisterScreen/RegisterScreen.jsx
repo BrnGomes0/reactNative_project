@@ -47,11 +47,13 @@ function RegisterScreen () {
             icon='lock-outline'
             secureTextEntry
         />
-        <Button
-            title='Create an Account'
-            onPress={registred}
-        />
-        <Text style={styles.text}>Already have an account?</Text>
+        <View style={styles.button}>
+            <Button
+                title='Create an Account'
+                onPress={registred}
+            />
+            <Text style={styles.textButton}>Already have an account?</Text>
+        </View>
     </View>
     );
 }
@@ -71,7 +73,16 @@ const styles = StyleSheet.create({
     },
     title: {
         color: 'white',
-        fontSize: 20,
+        fontSize: 30,
         fontWeight: 'bold',
+        paddingRight: 120,
+
+    },
+    button: {
+        padding: 30
+    },
+    textButton:{
+        textAlign: 'center',
+        color: 'white'
     }
 })

@@ -32,6 +32,7 @@ function LoginScreen () {
             />
             <Button
                 title='LogIn'
+                style={styles.button}
             />
         </View>
     );
@@ -49,9 +50,15 @@ const styles = StyleSheet.create({
     },
     tittle: {
         color: 'white',
-        fontSize: 20,
-        fontWeight: 'bold',    },
+        fontSize: 30,
+        fontWeight: 'bold',
+        paddingRight: 180,  
+        paddingTop: 0,  
+    },
     text: {
         color: 'white',
+    },
+    button: {
+        padding: 30,
     }
 });

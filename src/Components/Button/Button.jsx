@@ -3,7 +3,7 @@ import { StyleSheet, TouchableOpacity, View, Text } from "react-native";
 
 export default function Button ({title, onPress}) {
     return(
-        <TouchableOpacity onPress={onPress}>
+        <TouchableOpacity onPress={onPress} style={styles.container}>
             <View style={styles.button}>
                 <Text style={styles.text}>{title}</Text>
             </View>
@@ -12,6 +12,9 @@ export default function Button ({title, onPress}) {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        padding: 20,
+    },
     button: {
         width: 314,
         height: 60,

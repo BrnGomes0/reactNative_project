@@ -1,22 +1,27 @@
-import react from "react";
+import react, { useState } from "react";
 import { View, Text, StyleSheet, TextInput } from "react-native";
-import Button from "../../Components/Button/Button";
+import Button from "../../Components/Button/Button.jsx";
+import Input from '../../Components/Input/Input.jsx'
 
 function ValueMoney () {
-    const balance = 'R$ 9.331,11'
+    const balance = 'R$ 9.322,11'
+    const [balnce, setbalnce] = useState('');
     return(
         <View style={styles.container}>
             <View style={styles.textArea}>
                 <Text style={styles.tittle}>Enter the amount of your transfer</Text>
                 <Text style={styles.text}>Current Balance: <Text style={styles.balance}>{balance}</Text></Text>
                 <TextInput
-                    placeholder='Value'
+                    placeholder='Enter your value'
                     style={styles.input}
+                    keyboardType='numeric'
+                    value={balnce}
                 />
             </View>
             <Button
-                title={'Send'}
-            />
+                 title={'Send'}
+                 style={styles.button}
+             />
         </View>
     );
 }
@@ -27,7 +32,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#252525',
-        flexDirection: 'column',
     },
     text: {
         color: 'gray',
@@ -49,11 +53,14 @@ const styles = StyleSheet.create({
         marginTop: 80,
         padding: 20,
     },
-    input: {
-        marginTop: 20,
-        width: 280,
+    input:{
+        backgroundColor: '#d9d9d94d',
+        borderRadius: 10,
         height: 40,
-        padding: 24,
-        borderColor: 'gray',
-    }
+        width: 300,
+        color: 'white',
+        padding: 10,
+        marginTop: 20,
+    },
+    
 })
