@@ -45,16 +45,6 @@ function Tabs () {
                 tabBarIcon: ({ focused }) => (focused ? <MaterialCommunityIcons name='bank-outline' color="#fff" size={26}/> : <MaterialCommunityIcons name='home-outline' color="#fff"  size={26}/>)
             }} 
             />
-            <Tab.Screen name='Login' component={LoginScreen}
-            options={{
-                tabBarIcon: ({ focused }) => (focused ? <MaterialCommunityIcons name='home' color="#fff" size={26}/> : <MaterialCommunityIcons name='home-outline' color="#fff"  size={26}/>)
-            }} 
-            />
-            <Tab.Screen name='Register' component={RegisterScreen}
-            options={{
-                tabBarIcon: ({ focused }) => (focused ? <MaterialCommunityIcons name='home' color="#fff" size={26}/> : <MaterialCommunityIcons name='home-outline' color="#fff"  size={26}/>)
-            }} 
-            />
             <Tab.Screen name='ValueMoney' component={ValueMoney}
             options={{
                 tabBarIcon: ({ focused }) => (focused ? <MaterialIcons name='attach-money' color="#fff" size={26}/> : <MaterialCommunityIcons name='home-outline' color="#fff"  size={26}/>)

@@ -3,7 +3,7 @@ import { View, StyleSheet, Image, Text, FlatList, TouchableOpacity } from "react
 import { Ionicons } from "react-native-vector-icons";
 import Movimentation from "../../Components/Movimentation/Movimentation";
 import Action from "../../Components/ButtonsAction/Action";
-import { ScrollView } from "react-native";
+
 
 const list = [
   {

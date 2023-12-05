@@ -11,12 +11,13 @@ import {
  import { MaterialIcons } from "react-native-vector-icons";
  import { Ionicons } from "react-native-vector-icons";
  import { Fontisto } from "react-native-vector-icons"
-
+ import { useNavigation } from '@react-navigation/native';
 
 export default function Action() {
+    const navigation = useNavigation();
   return (
     <ScrollView style={styles.container} horizontal={true} showsHorizontalScrollIndicator={false}>
-        <TouchableOpacity style={styles.actionButton}>
+        <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate('ValueMoney')}>
             <View style={styles.areaButton}>
                <Image
                 source={require('../../../assets/imgs/pix32.png')}
