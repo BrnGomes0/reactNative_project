@@ -42,12 +42,12 @@ function Tabs () {
         <Tab.Navigator screenOptions={screenOptions}>
             <Tab.Screen name='First' component={FirstScreen}
             options={{
-                tabBarIcon: ({ focused }) => (focused ? <MaterialCommunityIcons name='bank-outline' color="#fff" size={26}/> : <MaterialCommunityIcons name='home-outline' color="#fff"  size={26}/>)
+                tabBarIcon: ({ focused }) => (focused ? <MaterialCommunityIcons name='bank-outline' color="#fff" size={26}/> : <MaterialCommunityIcons name='bank' color="#fff"  size={26}/>)
             }} 
             />
             <Tab.Screen name='ValueMoney' component={ValueMoney}
             options={{
-                tabBarIcon: ({ focused }) => (focused ? <MaterialIcons name='attach-money' color="#fff" size={26}/> : <MaterialCommunityIcons name='home-outline' color="#fff"  size={26}/>)
+                tabBarIcon: ({ focused }) => (focused ? <MaterialIcons name='attach-money' color="#fff" size={26}/> : <MaterialIcons name='attach-money' color="#fff"  size={26}/>)
             }} 
             />
         </Tab.Navigator>
