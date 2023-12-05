@@ -1,11 +1,12 @@
 import react from "react";
-import { StyleSheet, Text, View, Image} from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import Button from "../../Components/Button/Button";
+import { useNavigation } from "@react-navigation/native";
+
 
 function HomeScreen () {
-    const btnPressed = () => {
-        console.log('BUTTON PRESSED')
-    }
+    
+    const nagivation = useNavigation()
     return(
         <View style={styles.container}>
             <Image
@@ -16,9 +17,11 @@ function HomeScreen () {
             <Text style={styles.text}>Welcome to BuBo bank. Log in to access your account and analyze your investments</Text>
             <Button
                 title='SignIn'
-                onPress={btnPressed}
+                onPress={() => nagivation.navigate('LoginScreen')}
             />
-            <Text style={styles.text}>New Here?</Text>
+            <TouchableOpacity onPress={() => nagivation.navigate('RegisterScreen')}>
+                <Text style={styles.text}>New Here?</Text>
+            </TouchableOpacity>
         </View>
     );
 }

@@ -1,10 +1,29 @@
-import react from "react";
+import react, { useState } from "react";
 import { View, StyleSheet, Text } from "react-native";
 import Input from "../../Components/Input/Input.jsx";
 import Button from "../../Components/Button/Button.jsx";
 import SocialButton from '../../Components/SocialButton/SocialButton.jsx'
+import { useNavigation } from "@react-navigation/native";
+
 
 function LoginScreen () {
+    const navigation = useNavigation()
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    
+    const saveData = async () => {
+        try {
+            const result = await axios.post('http://10.109.71.4:8000/api/token/',
+                {
+                    email: email,
+                    password: password
+                })
+            console.log(result.data)
+            navigation.navigate('FirstScreen')
+        } catch (error) {
+            console.log(error.response)
+        }
+    }
     return(
         <View style={styles.container}>
             <Text style={styles.tittle}>Welcome Back</Text>
@@ -12,11 +31,15 @@ function LoginScreen () {
             <Input
                 placeholder='Email'
                 icon='email'
+                onChangeText={(txt) => setEmail(txt)}
+                value={email}
             />
             <Input
                 placeholder='Password'
                 icon='lock-outline'
                 secureTextEntry
+                onChangeText={(txt) => setPassword(txt)}
+                value={password}
             />
             <SocialButton
                 text='Login Apple'
@@ -33,6 +56,7 @@ function LoginScreen () {
             <Button
                 title='LogIn'
                 style={styles.button}
+                onPress={saveData}
             />
         </View>
     );

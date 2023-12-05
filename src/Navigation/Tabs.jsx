@@ -6,6 +6,7 @@ import LoginScreen from "../Screens/LoginScreen/LoginScreen.jsx";
 import RegisterScreen from '../Screens/RegisterScreen/RegisterScreen.jsx'
 import FirstScreen from '../Screens/FirstScreen/FirstScreen.jsx'
 import { MaterialCommunityIcons } from "react-native-vector-icons";
+import {MaterialIcons} from 'react-native-vector-icons'
 import ValueMoney from "../Screens/ValueMoney/ValueMoney.jsx";
 
 const Tab = createBottomTabNavigator();
@@ -41,7 +42,7 @@ function Tabs () {
         <Tab.Navigator screenOptions={screenOptions}>
             <Tab.Screen name='First' component={FirstScreen}
             options={{
-                tabBarIcon: ({ focused }) => (focused ? <MaterialCommunityIcons name='home' color="#fff" size={26}/> : <MaterialCommunityIcons name='home-outline' color="#fff"  size={26}/>)
+                tabBarIcon: ({ focused }) => (focused ? <MaterialCommunityIcons name='bank-outline' color="#fff" size={26}/> : <MaterialCommunityIcons name='home-outline' color="#fff"  size={26}/>)
             }} 
             />
             <Tab.Screen name='Login' component={LoginScreen}
@@ -56,7 +57,7 @@ function Tabs () {
             />
             <Tab.Screen name='ValueMoney' component={ValueMoney}
             options={{
-                tabBarIcon: ({ focused }) => (focused ? <MaterialCommunityIcons name='home' color="#fff" size={26}/> : <MaterialCommunityIcons name='home-outline' color="#fff"  size={26}/>)
+                tabBarIcon: ({ focused }) => (focused ? <MaterialIcons name='attach-money' color="#fff" size={26}/> : <MaterialCommunityIcons name='home-outline' color="#fff"  size={26}/>)
             }} 
             />
         </Tab.Navigator>

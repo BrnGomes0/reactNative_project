@@ -13,6 +13,8 @@ export default function Input (props) {
                 placeholder={props.placeholder}
                 {...props}
                 secureTextEntry={sec}
+                onChangeText={props.onChangeText}
+                value={props.value}
             />
             <MaterialCommunityIcons
                 name={props.icon}

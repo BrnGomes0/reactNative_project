@@ -1,60 +1,110 @@
 import react, { useState } from "react";
-import { 
+import {
     View,
-     Text,
-    StyleSheet } from "react-native";
+    Text,
+    StyleSheet,
+    TouchableOpacity,
+} from "react-native";
 import Input from "../../Components/Input/Input";
 import Button from "../../Components/Button/Button";
+import { useNavigation } from "@react-navigation/native";
+import axios from "axios";
 
 
-function RegisterScreen () {
-    const registred = () => {
-        console.warn('REGISTRED!')
-    }
+function RegisterScreen() {
+
+    const navigation = useNavigation();
     const [firstName, setFirstName] = useState('');
-    const [secondName, setSecondName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState(0);
-    const [date, setDate] = useState('');
+    const [cpf, setCpf] = useState('');
     const [password, setPassword] = useState('');
 
-    return(
+    const saveData = async () => {
+        try {
+            const result = await axios.post('http://10.109.71.4:8000/api/v1/user/create',
+                {
+                    email: email,
+                    password: password,
+                    first_name: firstName,
+                    last_name: lastName,
+                    cpf: cpf,
+                })
+            console.log(result.data)
+            navigation.navigate('LoginScreen')
+        } catch (error) {
+            console.log(error.response)
+        }
+        // try{
+        //     const baseUrl = 'http://10.109.71.4:8000/api'
+        //     let result = await fetch(baseUrl, {
+        //         method: 'POST',
+        //         headers: {'Content-Type': 'application/json'},
+        //         body: JSON.stringify({
+        //             email: email,
+        //             password: password,
+        //             first_name: firstName,
+        //             last_name: lastName,
+        //             cpf: cpf
+        //         })
+        //     });
+        //     result = await result.json();
+        //     if(result){
+        //         console.warn('DATA IS ADDED')
+        //         navigation.navigate('Login')
+        //     }
+        // }catch(error){
+        //     console.warn(error);
+        // }
+
+
+    }
+
+    return (
         <View style={styles.container}>
-        <Text style={styles.title}>Create an account</Text>
-        <Text style={styles.text}>Create your account here. Look the your email after create account for to check code</Text>
-        <Input
-            placeholder='First Name'
-            icon='account'
-        />
-        <Input
-            placeholder='Second Name'
-            icon='account'
-        />
-        <Input
-            placeholder='Email'
-            icon='email'
-        />
-        <Input
-            placeholder='Phone'
-            icon='phone'
-        />
-        <Input
-            placeholder='Born Date'
-            icon='calendar'
-        />
-        <Input
-            placeholder='Password'
-            icon='lock-outline'
-            secureTextEntry
-        />
-        <View style={styles.button}>
-            <Button
-                title='Create an Account'
-                onPress={registred}
+            <Text style={styles.title}>Create an account</Text>
+            <Text style={styles.text}>Create your account here. Look the your email after create account for to check code</Text>
+            <Input
+                placeholder='First Name: '
+                icon='account'
+                onChangeText={(txt) => setFirstName(txt)}
+                value={firstName}
             />
-            <Text style={styles.textButton}>Already have an account?</Text>
+            <Input
+                placeholder='Last Name: '
+                icon='account'
+                onChangeText={(txt) => setLastName(txt)}
+                value={lastName}
+            />
+            <Input
+                placeholder='Email: '
+                icon='email'
+                onChangeText={(txt) => setEmail(txt)}
+                value={email}
+            />
+            <Input
+                placeholder='Cpf: '
+                icon='card'
+                onChangeText={(txt) => setCpf(txt)}
+                value={cpf}
+            />
+            <Input
+                placeholder='Password: '
+                icon='lock-outline'
+                secureTextEntry
+                onChangeText={(txt) => setPassword(txt)}
+                value={password}
+            />
+            <View style={styles.button}>
+                <Button
+                    title='Create an Account'
+                    onPress={saveData}
+                />
+                <TouchableOpacity style={styles.textArea} onPress={() => navigation.navigate('Login')}>
+                    <Text style={styles.text}>Do you already have an account?</Text>
+                </TouchableOpacity>
+            </View>
         </View>
-    </View>
     );
 }
 
@@ -69,7 +119,8 @@ const styles = StyleSheet.create({
         flexDirection: 'col',
     },
     text: {
-        color:'white',
+        color: 'white',
+        textAlign: 'center'
     },
     title: {
         color: 'white',
@@ -81,8 +132,9 @@ const styles = StyleSheet.create({
     button: {
         padding: 30
     },
-    textButton:{
+    textButton: {
         textAlign: 'center',
         color: 'white'
-    }
+    },
+
 })

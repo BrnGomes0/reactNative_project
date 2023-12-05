@@ -1,7 +1,6 @@
 import react, { useState } from "react";
 import { View, Text, StyleSheet, TextInput } from "react-native";
 import Button from "../../Components/Button/Button.jsx";
-import Input from '../../Components/Input/Input.jsx'
 
 function ValueMoney () {
     const balance = 'R$ 9.322,11'
@@ -62,5 +61,6 @@ const styles = StyleSheet.create({
         padding: 10,
         marginTop: 20,
     },
+    
     
 })
