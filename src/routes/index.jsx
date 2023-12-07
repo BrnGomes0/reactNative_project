@@ -6,7 +6,7 @@ const Routes = () => {
     const {signed} = useSelector(state => {return state.userReducer})
 
 
-    return signed ? <AuthRoutes /> : <AppRoutes />;
+    return signed ? <AppRoutes /> : <AuthRoutes />;
     // AuthRoutes
     // AppRoutes
 };

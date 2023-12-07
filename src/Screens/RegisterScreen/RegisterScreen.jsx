@@ -22,7 +22,7 @@ function RegisterScreen() {
 
     const saveData = async () => {
         try {
-            const result = await axios.post('http://10.109.71.4:8000/api/v1/user/create',
+            const result = await axios.post('http://10.234.88.183:8000/api/v1/user/create',
                 {
                     email: email,
                     password: password,
@@ -35,29 +35,7 @@ function RegisterScreen() {
         } catch (error) {
             console.log(error.response)
         }
-        // try{
-        //     const baseUrl = 'http://10.109.71.4:8000/api'
-        //     let result = await fetch(baseUrl, {
-        //         method: 'POST',
-        //         headers: {'Content-Type': 'application/json'},
-        //         body: JSON.stringify({
-        //             email: email,
-        //             password: password,
-        //             first_name: firstName,
-        //             last_name: lastName,
-        //             cpf: cpf
-        //         })
-        //     });
-        //     result = await result.json();
-        //     if(result){
-        //         console.warn('DATA IS ADDED')
-        //         navigation.navigate('Login')
-        //     }
-        // }catch(error){
-        //     console.warn(error);
-        // }
-
-
+        
     }
 
     return (
