@@ -40,7 +40,7 @@ const screenOptions = {
 function Tabs () {
     return(
         <Tab.Navigator screenOptions={screenOptions}>
-            <Tab.Screen name='First' component={FirstScreen}
+            <Tab.Screen name='FirstScreen' component={FirstScreen}
             options={{
                 tabBarIcon: ({ focused }) => (focused ? <MaterialCommunityIcons name='bank-outline' color="#fff" size={26}/> : <MaterialCommunityIcons name='bank' color="#fff"  size={26}/>)
             }} 

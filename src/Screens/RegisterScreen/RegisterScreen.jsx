@@ -22,7 +22,7 @@ function RegisterScreen() {
 
     const saveData = async () => {
         try {
-            const result = await axios.post('http://10.234.88.183:8000/api/v1/user/create',
+            const result = await axios.post('http://10.109.71.5:19006/api/v1/user/create',
                 {
                     email: email,
                     password: password,
