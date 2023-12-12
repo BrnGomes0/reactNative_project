@@ -32,6 +32,10 @@ const list = [
 
 function FirstScreen () {
   const [showValue, setShowValue] = useState(false)
+  const [balance, setBalance] = useState('')
+  
+
+
   const pressed = () => {
     setShowValue(!showValue);
   }
@@ -55,7 +59,7 @@ function FirstScreen () {
         </TouchableOpacity>
       </View>
         <View style={styles.balance}>
-          <Text style={styles.valueAccount}>R$ 9.213,21</Text>
+          <Text style={styles.valueAccount}>R$ 9.3902,00</Text>
           <Text style={styles.textBalance}>Current Balance</Text>
         </View>
       <Action/>

@@ -2,19 +2,17 @@ import react, { useState } from "react";
 import { View, Text, StyleSheet, TextInput } from "react-native";
 import Button from "../../Components/Button/Button.jsx";
 
-function ValueMoney () {
-    const balance = 'R$ 9.3902,00'
-    const [balnce, setbalnce] = useState('');
+function who () {
+    const [numberAccount, setbalnce] = useState('');
     return(
         <View style={styles.container}>
             <View style={styles.textArea}>
-                <Text style={styles.tittle}>Enter the amount of your transfer</Text>
-                <Text style={styles.text}>Current Balance: <Text style={styles.balance}>{balance}</Text></Text>
+                <Text style={styles.tittle}>Insert number account for send: </Text>
                 <TextInput
-                    placeholder='Enter your value'
+                    placeholder='Enter number account: '
                     style={styles.input}
                     keyboardType='numeric'
-                    value={balnce}
+                    value={numberAccount}
                 />
             </View>
             <Button
@@ -25,7 +23,7 @@ function ValueMoney () {
     );
 }
 
-export default ValueMoney;
+export default who;
 
 const styles = StyleSheet.create({
     container: {

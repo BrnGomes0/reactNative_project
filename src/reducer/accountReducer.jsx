@@ -6,7 +6,7 @@ import {
 
 const initialSTate = {
     token: '',
-    signed: false,
+    signed: true,
 }
 
 

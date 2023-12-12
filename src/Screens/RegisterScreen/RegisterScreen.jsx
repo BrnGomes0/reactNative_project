@@ -19,6 +19,34 @@ function RegisterScreen() {
     const [email, setEmail] = useState('');
     const [cpf, setCpf] = useState('');
     const [password, setPassword] = useState('');
+    
+    const [account_agency, setAccount_agency] = useState('');
+    const [account_number, setAccount_number] = useState('');
+    const [account_balance, setAccount_balance] = useState('');
+    const [account_type, setAccount_type] = useState('');
+
+    // const createAccount = async (token) => {
+    //     try {
+    //         const configuration = {
+    //             headers: {
+    //                 Authorization: `Bearer ${token}`,
+    //             },
+    //         };
+
+    //         const result = await axios.post('http://10.109.71.5:19006/api/v1/user/accounts',
+    //             {
+    //                 account_agency: account_agency,
+    //                 account_number: account_number,
+    //                 account_balance: account_balance,
+    //                 account_type: account_type,
+    //             },
+    //             configuration
+    //         );
+    //         console.log(result.data);
+    //     }catch(error){
+    //         console.log(error);
+    //     }
+    // };
 
     const saveData = async () => {
         try {
@@ -29,14 +57,21 @@ function RegisterScreen() {
                     first_name: firstName,
                     last_name: lastName,
                     cpf: cpf,
-                })
+                });
             console.log(result.data)
+
+            // if (result.data && result.data.token){
+            //     console.log("Inside if block");
+            //     const userToken = result.data.token;
+            //     await createAccount(userToken)
+            //     navigation.navigate('LoginScreen')
+            // }
             navigation.navigate('LoginScreen')
         } catch (error) {
-            console.log(error.response)
+            console.log(error)
         }
         
-    }
+    };
 
     return (
         <View style={styles.container}>
